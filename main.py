@@ -3,4 +3,4 @@ from deck import Deck
 from hand import Hand
 
 d = Deck()
-h = d.deal(7)
+h = d.deal(5)
