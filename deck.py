@@ -22,3 +22,4 @@ class Deck:
     h2 = Hand([self.cards[x] for x in range(1, 10, 2)])
     hands = (h1,h2)
     return hands
+    
