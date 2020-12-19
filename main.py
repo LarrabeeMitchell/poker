@@ -35,13 +35,17 @@ assert pair.is_pair()
 
 three = Hand([Card(s, 8) for s in ["Hearts","Clubs","Diamonds"]]+[Card("Spades",x) for x in range(1,3)])
 print(three)
+assert three.is_3_of_a_kind()
 
 four = Hand([Card(s, 8) for s in ["Hearts","Clubs","Diamonds","Spades"]]+[Card("Spades",x) for x in range(1,2)])
 print(four)
+assert four.is_4_of_a_kind()
 
 two_pair = Hand([Card(s, 8) for s in ["Hearts","Clubs"]]+[Card(s, 9) for s in ["Hears","Clubs"]]+[Card("Spades",1)])
 print(two_pair)
 assert two_pair.is_two_pair()
 
+
 full_house = Hand([Card(s, 8) for s in ["Hearts","Clubs"]]+[Card(s, 9) for s in ["Hearts","Clubs","Diamonds"]])
 print(full_house)
+assert full_house.is_full_house()

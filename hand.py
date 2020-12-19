@@ -40,13 +40,36 @@ class Hand:
         c += 1
     return False
 
-  def is_3_of_a_kind():
-    return False
- 
-  def is_full_house():
+  def is_3_of_a_kind(self):
+    c = 0
+    s = 1
+    for x in self._cards[1:]:
+      f = self._cards[c].n
+      if x.n == f:
+        s += 1
+        c += 1
+        if s == 3:
+          return True
+      else:
+        c += 1
     return False
 
-  def is_4_of_a_kind():
+ 
+  def is_full_house(self):
+    return self.is_pair() and self.is_3_of_a_kind()
+
+  def is_4_of_a_kind(self):
+    c = 0
+    s = 1
+    for x in self._cards[1:]:
+      f = self._cards[c].n
+      if x.n == f:
+        s += 1
+        c += 1
+        if s == 4:
+          return True
+      else:
+        c += 1
     return False
 
   def is_two_pair(self):
@@ -54,12 +77,9 @@ class Hand:
     c = 0
     for x in self._cards[1:]:
       f = self._cards[c].n
-      print(f)
-      print(x.n)
       if x.n == f:
         r += 1
         c += 1
-        print(r)
         if r == 2: 
           return True
       else:
